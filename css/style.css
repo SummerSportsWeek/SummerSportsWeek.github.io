@@ -10,6 +10,14 @@
   --c-light: #F2F0EB;
   --c-white: #FFFFFF;
   --c-green: #2D6A2F;
+  --c-bg:       #FAF9F6;
+  --c-bg2:      #F2F0EB;
+  --c-bg3:      #E8E5DE;
+  --c-text:     #1A1A18;
+  --c-text2:    #4A4A44;
+  --c-text3:    #7A7A72;
+  --c-border:   rgba(26,26,24,0.10);
+  --c-border2:  rgba(26,26,24,0.06);
 
   --font-display: 'Bricolage Grotesque', sans-serif;
   --font-body: 'DM Sans', sans-serif;
