@@ -63,13 +63,6 @@
       justify-content: center;
     }
 
-    .hero-eyebrow {
-      background: rgba(245,86,10,0.10);
-      border: 1px solid rgba(245,86,10,0.25);
-      color: #C94008;
-      margin-bottom: 1.5rem;
-    }
-
     .hero h1 {
       font-family: var(--font-display);
       font-weight: 800;
@@ -123,7 +116,6 @@
       grid-template-rows: 1fr 1fr 1fr;
       gap: 0;
       padding: clamp(1rem, 2vw, 1.5rem);
-      background: var(--c-bg2);
     }
 
     .hero-photo-card {
@@ -325,7 +317,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">Summer <span>Sports</span> Week</a>
+  <a href="index.html" class="nav-logo"><img src="logos/SSW_ICON.png" alt="" style="height:28px; width:auto;">Summer <span>Sports</span> Week</a>
   <button class="nav-hamburger" aria-label="Menu openen">
     <span></span><span></span><span></span>
   </button>
@@ -348,8 +340,7 @@
 
     <!-- Left: tekst + countdown -->
     <div class="hero-left hero-content">
-      <div class="hero-eyebrow animate-up">⚽ 10e editie &nbsp;·&nbsp; Made, gemeente Drimmelen</div>
-      <h1 class="animate-up delay-1">Summer<br><span class="accent">Sports</span><br>Week</h1>
+      <img src="logos/SSW_LOGO.png" alt="Summer Sports Week" class="animate-up delay-1" style="max-width:420px; width:100%; height:auto; margin-bottom:0.3rem;">
       <p class="hero-date animate-up delay-2">17 – 21 augustus 2026</p>
       <p class="hero-desc animate-up delay-2">Sport, plezier en nieuwe vrienden. Vijf onvergetelijke dagen voor kinderen in groep&nbsp;5 t/m&nbsp;8 van de basisschool.</p>
       <div class="hero-actions animate-up delay-3">
@@ -380,8 +371,8 @@
     <div class="hero-right animate-up delay-2">
 
       <!-- Kaart 1: Aanmelden -->
-      <!-- 🔧 Voeg je eigen foto toe: <img src="images/aanmelden.jpg" alt="Aanmelden"> -->
       <a href="aanmelden.html" class="hero-photo-card">
+        <img src="images/aanmelden_index.jpeg" alt="Aanmelden">
         <div class="hero-photo-overlay"></div>
         <span class="hero-photo-icon">🎟️</span>
         <div class="hero-photo-label">
@@ -394,8 +385,8 @@
       </a>
 
       <!-- Kaart 2: Foto's -->
-      <!-- 🔧 Voeg je eigen foto toe: <img src="images/fotos.jpg" alt="Foto's"> -->
       <a href="fotos.html" class="hero-photo-card">
+        <img src="images/fotos_index.jpeg" alt="Foto's">
         <div class="hero-photo-overlay"></div>
         <span class="hero-photo-icon">📸</span>
         <div class="hero-photo-label">
@@ -408,8 +399,8 @@
       </a>
 
       <!-- Kaart 3: Video's -->
-      <!-- 🔧 Voeg je eigen foto toe: <img src="images/videos.jpg" alt="Video's"> -->
       <a href="videos.html" class="hero-photo-card">
+        <img src="images/videos_index.jpeg" alt="Video's">
         <div class="hero-photo-overlay"></div>
         <span class="hero-photo-icon">🎬</span>
         <div class="hero-photo-label">
