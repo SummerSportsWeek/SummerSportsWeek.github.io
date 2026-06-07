@@ -6,6 +6,54 @@
   <title>Aanmelden — Summer Sports Week 2026</title>
   <meta name="description" content="Meld je kind aan voor Summer Sports Week 2026. 17–21 augustus in Made." />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    /* ── LIGHT THEME ── */
+    :root {
+      --c-bg:      #FAF9F6;
+      --c-bg2:     #F2F0EB;
+      --c-bg3:     #E8E5DE;
+      --c-text:    #1A1A18;
+      --c-text2:   #4A4A44;
+      --c-text3:   #7A7A72;
+      --c-border:  rgba(26,26,24,0.10);
+      --c-border2: rgba(26,26,24,0.06);
+    }
+    body { background: var(--c-bg); color: var(--c-text); }
+    nav { background: rgba(250,249,246,0.88); border-bottom: 1px solid var(--c-border); }
+    .nav-logo { color: var(--c-text); }
+    .nav-links a { color: var(--c-text2); }
+    .nav-links a:hover, .nav-links a.active { color: var(--c-text); background: var(--c-bg2); }
+    .nav-hamburger span { background: var(--c-text); }
+    .nav-links { background: var(--c-bg); }
+    .section-label { color: var(--c-orange); }
+    .section-title { color: var(--c-text); }
+    .section-subtitle { color: var(--c-text2); }
+    .section-full { background: var(--c-bg2); }
+    .page-header { border-bottom-color: var(--c-border); }
+    .info-card { background: var(--c-bg); border-color: var(--c-border); }
+    .info-card h3 { color: var(--c-text); }
+    .info-card p { color: var(--c-text2); }
+    .form-card { background: var(--c-bg2); border-color: var(--c-border); }
+    .form-label { color: var(--c-text2); }
+    .form-input, .form-textarea, .form-select { background: var(--c-bg); border-color: var(--c-border); color: var(--c-text); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--c-text3); }
+    .form-note { color: var(--c-text3); }
+    .countdown-num { color: var(--c-text); }
+    .countdown-label { color: var(--c-text3); }
+    footer { background: var(--c-bg2); border-top-color: var(--c-border); }
+    .nav-logo { color: var(--c-text) !important; }
+    .footer-brand p { color: var(--c-text3); }
+    .footer-col h4 { color: var(--c-text); }
+    .footer-col ul li a, .footer-col p { color: var(--c-text3); }
+    .footer-col ul li a:hover { color: var(--c-text); }
+    .footer-bottom { border-top-color: var(--c-border2); }
+    .footer-bottom p { color: var(--c-text3); }
+    .btn-secondary { background: var(--c-bg2); color: var(--c-text); border: 1px solid var(--c-border); }
+    .btn-secondary:hover { background: var(--c-bg3); }
+  </style>
 </head>
 <body>
 
@@ -56,25 +104,25 @@
   <section class="section">
     <div class="reveal" style="max-width:680px; margin-bottom:2.5rem">
       <p>Aanmelden gaat via Pretix, ons ticketplatform. Klik op de knop hieronder om naar het aanmeldformulier te gaan. Je ontvangt na aanmelding een bevestiging per e-mail.</p>
-      <p style="margin-top:0.75rem; color:var(--c-grey); font-size:0.9rem">⚠️ Wees er snel bij — vol = vol!</p>
+      <p style="margin-top:0.75rem; color:var(--c-text3); font-size:0.9rem">⚠️ Wees er snel bij — vol = vol!</p>
     </div>
 
     <div class="reveal" style="
-      background: var(--c-dark3);
-      border: 1px solid rgba(242,240,235,0.06);
+      background: var(--c-bg2);
+      border: 1px solid var(--c-border2);
       border-radius: 20px;
       padding: clamp(2rem, 5vw, 3.5rem);
       max-width: 620px;
       text-align: center;
     ">
       <div style="font-size:3rem; margin-bottom:1rem">🎟️</div>
-      <h2 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--c-white); margin-bottom:0.5rem">Aanmelden via Pretix</h2>
-      <p style="color:var(--c-grey); font-size:0.9rem; margin-bottom:1.75rem; max-width:380px; margin-left:auto; margin-right:auto">Klik op de knop om naar het aanmeldformulier te gaan. Aanmelden duurt slechts een paar minuten.</p>
+      <h2 style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--c-text); margin-bottom:0.5rem">Aanmelden via Pretix</h2>
+      <p style="color:var(--c-text3); font-size:0.9rem; margin-bottom:1.75rem; max-width:380px; margin-left:auto; margin-right:auto">Klik op de knop om naar het aanmeldformulier te gaan. Aanmelden duurt slechts een paar minuten.</p>
       <!-- 🔧 Vervang de href hieronder door de echte Pretix-link -->
       <a href="https://pretix.eu/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1rem; padding:1rem 2rem">
         Naar het aanmeldformulier →
       </a>
-      <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--c-grey)">Je wordt doorgestuurd naar pretix.eu</p>
+      <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--c-text3)">Je wordt doorgestuurd naar pretix.eu</p>
     </div>
 
     <div class="info-cards reveal" style="margin-top:3rem">
