@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Summer Sports Week</title>
+  <meta name="description" content="Neem contact op met Stichting Summer Sports Week." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Summer <span>Sports</span> Week</a>
+  <button class="nav-hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aanmelden.html">Aanmelden</a></li>
+    <li><a href="fotos.html">Foto's</a></li>
+    <li><a href="videos.html">Video's</a></li>
+    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="aanmelden.html" class="nav-cta">Meld je aan →</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <p class="section-label">Neem contact op</p>
+      <h1 class="section-title animate-up">Contact</h1>
+      <p class="section-subtitle animate-up delay-1">Heb je een vraag of opmerking? We horen graag van je.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:3rem; align-items:start">
+
+      <!-- Form -->
+      <div class="reveal">
+        <p class="section-label">Stuur een bericht</p>
+        <h2 class="section-title" style="font-size:1.6rem; margin-bottom:1.5rem">Contactformulier</h2>
+
+        <!--
+          🔧 Vervang de action-URL door jouw echte Formspree endpoint:
+          https://formspree.io/f/JOUW_FORM_ID
+        -->
+        <form
+          class="form-card"
+          data-formspree="https://formspree.io/f/JOUW_FORM_ID_CONTACT"
+          action="https://formspree.io/f/JOUW_FORM_ID_CONTACT"
+          method="POST"
+        >
+          <div class="form-group">
+            <label class="form-label" for="naam">Naam <span class="required">*</span></label>
+            <input class="form-input" type="text" id="naam" name="naam" placeholder="Je naam" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-mailadres <span class="required">*</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jouw@email.nl" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="onderwerp">Onderwerp</label>
+            <input class="form-input" type="text" id="onderwerp" name="onderwerp" placeholder="Waar gaat je bericht over?" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bericht">Bericht <span class="required">*</span></label>
+            <textarea class="form-textarea" id="bericht" name="bericht" placeholder="Schrijf hier je bericht…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem">
+            Versturen →
+          </button>
+        </form>
+
+        <div class="form-success" style="max-width:620px">
+          ✅ Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.
+        </div>
+      </div>
+
+      <!-- Contact info -->
+      <div class="reveal" style="display:flex; flex-direction:column; gap:1.5rem; padding-top:0.5rem">
+        <div>
+          <p class="section-label" style="margin-bottom:0.5rem">Direct contact</p>
+          <h2 class="section-title" style="font-size:1.6rem; margin-bottom:1.25rem">Gegevens</h2>
+        </div>
+
+        <div style="background:var(--c-dark3); border:1px solid rgba(242,240,235,0.06); border-radius:var(--radius); padding:1.5rem">
+          <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--c-orange); margin-bottom:0.5rem">E-mail</p>
+          <a href="mailto:info@summersportsweek.nl" style="color:var(--c-light); font-size:1rem; font-weight:500; text-decoration:none">
+            info@summersportsweek.nl
+          </a>
+        </div>
+
+        <div style="background:var(--c-dark3); border:1px solid rgba(242,240,235,0.06); border-radius:var(--radius); padding:1.5rem">
+          <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--c-orange); margin-bottom:0.5rem">Organisatie</p>
+          <p style="color:var(--c-light); font-weight:500; margin-bottom:0.25rem">Stichting Summer Sports Week</p>
+          <p style="color:var(--c-grey); font-size:0.875rem; line-height:1.7">
+            Turkooishof 48<br>
+            4817HD Breda<br><br>
+            KVK: 63224879<br>
+            SBI-code: 88992
+          </p>
+        </div>
+
+        <div style="background:var(--c-dark3); border:1px solid rgba(242,240,235,0.06); border-radius:var(--radius); padding:1.5rem">
+          <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--c-orange); margin-bottom:0.75rem">Volg ons</p>
+          <div class="socials" style="margin-top:0">
+            <a href="https://nl-nl.facebook.com/pages/category/Sports-Event/Summer-Sports-Week-331036767025035/" target="_blank" rel="noopener" class="social-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/summersportsweek/" target="_blank" rel="noopener" class="social-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCxpCio21OCXg7ZdBOnwWqRw" target="_blank" rel="noopener" class="social-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="var(--c-dark)"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Responsive fix -->
+    <style>
+      @media (max-width: 768px) {
+        .section > div[style*="grid-template-columns"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Summer <span>Sports</span> Week</a>
+      <p>Sport, plezier en nieuwe ontmoetingen voor kinderen in groep 5 t/m 8.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigatie</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aanmelden.html">Aanmelden</a></li>
+        <li><a href="fotos.html">Foto's</a></li>
+        <li><a href="videos.html">Video's</a></li>
+        <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>info@summersportsweek.nl<br><br>Stichting Summer Sports Week<br>Turkooishof 48, 4817HD Breda</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Stichting Summer Sports Week</p>
+    <p>KVK 63224879 · SBI-code 88992</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

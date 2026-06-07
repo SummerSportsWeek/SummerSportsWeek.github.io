@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vrijwilligers — Summer Sports Week</title>
+  <meta name="description" content="Word vrijwilliger bij Summer Sports Week 2026. Meld je aan via het formulier." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Summer <span>Sports</span> Week</a>
+  <button class="nav-hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aanmelden.html">Aanmelden</a></li>
+    <li><a href="fotos.html">Foto's</a></li>
+    <li><a href="videos.html">Video's</a></li>
+    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="aanmelden.html" class="nav-cta">Meld je aan →</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <p class="section-label">Doe mee</p>
+      <h1 class="section-title animate-up">Samen maken we SSW mogelijk</h1>
+      <p class="section-subtitle animate-up delay-1">Zonder onze vrijwilligers is Summer Sports Week niet mogelijk — en daar zijn we enorm trots op!</p>
+    </div>
+  </div>
+
+  <section class="section">
+
+    <!-- Intro -->
+    <div class="reveal" style="max-width:700px; margin-bottom:3rem">
+      <p style="color:rgba(242,240,235,0.75); line-height:1.8; font-size:1.02rem">
+        Al jarenlang werken wij samen met een enthousiast team van vrijwilligers. Veel van hen deden vroeger zelf mee als kind en zijn nu doorgegroeid tot begeleider. Zij zorgen ervoor dat kinderen een veilige, sportieve en onvergetelijke week beleven.
+      </p>
+    </div>
+
+    <!-- Wat wordt er verwacht / wat krijg je terug -->
+    <div class="reveal">
+      <p class="section-label">Vrijwilliger worden</p>
+      <h2 class="section-title">Wat houdt het in?</h2>
+    </div>
+
+    <div class="volunteer-highlights reveal">
+      <div class="volunteer-card">
+        <div class="volunteer-card-icon">⏰</div>
+        <h3>Wat wordt er van je verwacht?</h3>
+        <ul>
+          <li>Elke dag aanwezig van ~7:30/8:00 tot ~18:00</li>
+          <li>Woensdag mag je iets langer uitslapen</li>
+          <li>Zondag 10 augustus: kennismakingsmiddag</li>
+          <li>Er voor de kinderen zijn — begeleiden, aanmoedigen, spelen</li>
+          <li>Aanwezig elke dag van de week</li>
+        </ul>
+      </div>
+
+      <div class="volunteer-card">
+        <div class="volunteer-card-icon">🎁</div>
+        <h3>Wat krijg je er voor terug?</h3>
+        <ul>
+          <li>Een SSW begeleiders-hoodie</li>
+          <li>Ontbijt, lunch en een heerlijke avondmaaltijd</li>
+          <li>Een fantastisch hecht team</li>
+          <li>Gezellige avonden samen</li>
+          <li>Erkend leerbedrijf — ook te gebruiken als stage</li>
+          <li>Goed voor je cv 😉</li>
+        </ul>
+      </div>
+
+      <div class="volunteer-card">
+        <div class="volunteer-card-icon">📋</div>
+        <h3>Wat stuur je in?</h3>
+        <ul>
+          <li>Een stukje over jezelf: woonplaats, sport, motivatie</li>
+          <li>Een leuke foto van jezelf</li>
+          <li>Naam + telefoonnummer van je ouder(s)</li>
+          <li>Vóór 30 mei 2026 insturen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal" style="
+      background: rgba(245,86,10,0.07);
+      border: 1px solid rgba(245,86,10,0.2);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      max-width: 620px;
+      margin: 2rem 0;
+      font-size:0.9rem;
+      color: rgba(242,240,235,0.75);
+    ">
+      ℹ️ Na je aanmelding nemen we contact met je op. In juni hoor je of je mee kunt helpen. Aanmelden betekent niet automatisch dat je al bent ingedeeld.
+    </div>
+
+    <!-- FORM -->
+    <div class="reveal" style="margin-top:3rem">
+      <p class="section-label">Aanmelden</p>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Meld je aan als vrijwilliger</h2>
+
+      <!--
+        🔧 Vervang de action-URL door jouw echte Formspree endpoint:
+        https://formspree.io/f/JOUW_FORM_ID
+      -->
+      <form
+        class="form-card"
+        data-formspree="https://formspree.io/f/JOUW_FORM_ID"
+        action="https://formspree.io/f/JOUW_FORM_ID"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="naam">Naam <span class="required">*</span></label>
+            <input class="form-input" type="text" id="naam" name="naam" placeholder="Je volledige naam" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-mailadres <span class="required">*</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jouw@email.nl" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="telefoon">Telefoonnummer <span class="required">*</span></label>
+          <input class="form-input" type="tel" id="telefoon" name="telefoon" placeholder="06 – – – – – – – –" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="bericht">Vertel iets over jezelf <span class="required">*</span></label>
+          <textarea class="form-textarea" id="bericht" name="bericht" placeholder="Vertel waar je woont, welke sport je doet en waarom je vrijwilliger wil worden bij SSW…" style="min-height:160px" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="foto">Foto van jezelf</label>
+          <input class="form-input" type="file" id="foto" name="foto" accept="image/*" style="padding:0.6rem 1rem; cursor:pointer" />
+          <p class="form-note">JPG, PNG of WEBP — max. 5 MB</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ouder-naam">Naam ouder(s) <span class="required">*</span></label>
+            <input class="form-input" type="text" id="ouder-naam" name="ouder_naam" placeholder="Naam van ouder(s)" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ouder-telefoon">Telefoon ouder(s) <span class="required">*</span></label>
+            <input class="form-input" type="tel" id="ouder-telefoon" name="ouder_telefoon" placeholder="06 – – – – – – – –" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem">
+          Aanmelding versturen →
+        </button>
+      </form>
+
+      <div class="form-success" style="max-width:620px">
+        ✅ Bedankt voor je aanmelding! We nemen in juni contact met je op.
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Summer <span>Sports</span> Week</a>
+      <p>Sport, plezier en nieuwe ontmoetingen voor kinderen in groep 5 t/m 8.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigatie</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aanmelden.html">Aanmelden</a></li>
+        <li><a href="fotos.html">Foto's</a></li>
+        <li><a href="videos.html">Video's</a></li>
+        <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>info@summersportsweek.nl<br><br>Stichting Summer Sports Week<br>Turkooishof 48, 4817HD Breda</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Stichting Summer Sports Week</p>
+    <p>KVK 63224879 · SBI-code 88992</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
