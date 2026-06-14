@@ -161,14 +161,27 @@
       line-height: 1.55;
     }
 
+    /* ── VRIJWILLIGERS HIGHLIGHTS ── */
+    .volunteer-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .vw-intro { grid-template-columns: 1fr; gap: 2rem; }
       .vw-photo-grid { grid-template-columns: repeat(3, 1fr); }
+      .vw-roles { grid-template-columns: repeat(2, 1fr); }
+      .volunteer-highlights { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 560px) {
       .vw-photo-grid { grid-template-columns: 1fr; }
+      .vw-roles { grid-template-columns: 1fr; }
+      .volunteer-highlights { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -243,7 +256,7 @@
       <p class="section-subtitle" style="margin-bottom:0">Afhankelijk van de dag en het programma kun je van alles doen. Geen dag is hetzelfde.</p>
     </div>
 
-    <div class="vw-roles reveal" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="vw-roles reveal">
       <div class="vw-role-card">
         <div class="vw-role-icon">🤝</div>
         <h3>Groepsbegeleider</h3>
@@ -267,7 +280,7 @@
       <h2 class="section-title">Wat houdt het in?</h2>
     </div>
 
-    <div class="volunteer-highlights reveal" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="volunteer-highlights reveal">
       <div class="volunteer-card">
         <div class="volunteer-card-icon">⏰</div>
         <h3>Wat wordt er van je verwacht?</h3>
