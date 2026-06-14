@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foto's — Summer Sports Week</title>
-  <meta name="description" content="Bekijk alle foto's van Summer Sports Week op MyAlbum." />
+  <meta name="description" content="Bekijk alle foto's van Summer Sports Week, per jaar en per dag." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
     }
     body { background: var(--c-bg); color: var(--c-text); }
     nav { background: rgba(250,249,246,0.88); border-bottom: 1px solid var(--c-border); }
-    .nav-logo { color: var(--c-text); }
+    .nav-logo { color: var(--c-text) !important; }
     .nav-links a { color: var(--c-text2); }
     .nav-links a:hover, .nav-links a.active { color: var(--c-text); background: var(--c-bg2); }
     .nav-hamburger span { background: var(--c-text); }
@@ -32,10 +32,7 @@
     .section-title { color: var(--c-text); }
     .section-subtitle { color: var(--c-text2); }
     .page-header { border-bottom-color: var(--c-border); }
-    .countdown-num { color: var(--c-text); }
-    .countdown-label { color: var(--c-text3); }
     footer { background: var(--c-bg2); border-top-color: var(--c-border); }
-    .nav-logo { color: var(--c-text) !important; }
     .footer-brand p { color: var(--c-text3); }
     .footer-col h4 { color: var(--c-text); }
     .footer-col ul li a, .footer-col p { color: var(--c-text3); }
@@ -43,62 +40,131 @@
     .footer-bottom { border-top-color: var(--c-border2); }
     .footer-bottom p { color: var(--c-text3); }
 
-    .album-year-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-top: 2.5rem;
+    /* ── FOTO JAAR SECTIES ── */
+    .foto-year-section {
+      margin-bottom: 3.5rem;
     }
 
-    .album-year-card {
-      background: var(--c-bg2);
-      border: 1px solid var(--c-border2);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      text-decoration: none;
+    .foto-year-header {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      transition: border-color var(--transition), transform var(--transition);
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--c-border);
     }
 
-    .album-year-card:hover {
-      border-color: rgba(245,86,10,0.35);
-      transform: translateY(-2px);
-    }
-
-    .album-year-num {
+    .foto-year-title {
       font-family: var(--font-display);
       font-size: 2rem;
       font-weight: 800;
-      color: var(--c-orange);
-      letter-spacing: -0.03em;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-
-    .album-year-info h3 {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
       color: var(--c-text);
-      margin-bottom: 0.2rem;
+      letter-spacing: -0.04em;
+      line-height: 1;
     }
 
-    .album-year-info p {
-      font-size: 0.82rem;
-      color: var(--c-text3);
+    .dag-placeholder {
+      background: linear-gradient(155deg, #9ca3af 0%, #d1d5db 100%);
+      opacity: 0.6;
+      cursor: default;
+      pointer-events: none;
     }
 
-    .album-arrow {
-      margin-left: auto;
-      color: var(--c-text3);
-      font-size: 1.1rem;
-      transition: color var(--transition);
+    /* ── DAG GRID ── */
+    .foto-day-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
     }
 
-    .album-year-card:hover .album-arrow {
-      color: var(--c-orange);
+    .foto-day-grid.flex-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .foto-day-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.9rem;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    }
+
+    .foto-day-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+    }
+
+    /* Dag-kleuren consistent per weekdag */
+    .dag-ma { background: linear-gradient(155deg, #FA6B20 0%, #f5a27a 100%); }
+    .dag-di { background: linear-gradient(155deg, #2563eb 0%, #7dd3fc 100%); }
+    .dag-wo { background: linear-gradient(155deg, #16a34a 0%, #86efac 100%); }
+    .dag-do { background: linear-gradient(155deg, #7c3aed 0%, #c4b5fd 100%); }
+    .dag-vr { background: linear-gradient(155deg, #dc2626 0%, #fca5a5 100%); }
+    .dag-cr { background: linear-gradient(155deg, #db2777 0%, #f9a8d4 100%); }
+
+    .foto-day-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.08) 55%, transparent 100%);
+    }
+
+    .foto-day-info {
+      position: relative;
+      z-index: 1;
+    }
+
+    .foto-day-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      display: block;
+    }
+
+    .foto-day-sub {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.65);
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    .foto-day-arrow {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.85rem;
+      z-index: 1;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .foto-day-card:hover .foto-day-arrow {
+      background: rgba(255,255,255,0.35);
+      transform: translate(2px, -2px);
+    }
+
+    @media (max-width: 900px) {
+      .foto-day-grid { grid-template-columns: repeat(3, 1fr); }
+      .foto-day-grid.flex-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .foto-day-grid { grid-template-columns: repeat(2, 1fr); }
+      .foto-year-title { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -112,7 +178,7 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="aanmelden.html">Aanmelden</a></li>
-    <li><a href="fotos.html">Foto's</a></li>
+    <li><a href="fotos.html" class="active">Foto's</a></li>
     <li><a href="videos.html">Video's</a></li>
     <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -125,59 +191,394 @@
     <div class="page-header-inner">
       <p class="section-label">Herinneringen</p>
       <h1 class="section-title animate-up">Foto's</h1>
-      <p class="section-subtitle animate-up delay-1">Alle foto's van Summer Sports Week staan op MyAlbum. Klik op een jaar om het album te bekijken.</p>
+      <p class="section-subtitle animate-up delay-1">Alle foto's van Summer Sports Week, per jaar en per dag. Klik op een dag om het album te openen.</p>
     </div>
   </div>
 
   <section class="section">
-    <div class="reveal">
-      <p class="section-label">Fotoalbums</p>
-      <h2 class="section-title">Alle edities</h2>
+
+    <!-- 2026 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2026</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="fotos.html" class="foto-day-card dag-ma dag-placeholder">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="fotos.html" class="foto-day-card dag-di dag-placeholder">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="fotos.html" class="foto-day-card dag-wo dag-placeholder">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="fotos.html" class="foto-day-card dag-do dag-placeholder">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="fotos.html" class="foto-day-card dag-vr dag-placeholder">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
     </div>
 
-    <div class="album-year-grid reveal">
-      <!-- 🔧 Vervang de href-links door de echte MyAlbum-links per jaar -->
-      <a href="https://myalbum.com/" target="_blank" rel="noopener" class="album-year-card">
-        <div class="album-year-num">2025</div>
-        <div class="album-year-info">
-          <h3>SSW 2025</h3>
-          <p>Bekijk op MyAlbum</p>
-        </div>
-        <span class="album-arrow">↗</span>
-      </a>
-      <a href="https://myalbum.com/" target="_blank" rel="noopener" class="album-year-card">
-        <div class="album-year-num">2024</div>
-        <div class="album-year-info">
-          <h3>SSW 2024</h3>
-          <p>Bekijk op MyAlbum</p>
-        </div>
-        <span class="album-arrow">↗</span>
-      </a>
-      <a href="https://myalbum.com/" target="_blank" rel="noopener" class="album-year-card">
-        <div class="album-year-num">2023</div>
-        <div class="album-year-info">
-          <h3>SSW 2023</h3>
-          <p>Bekijk op MyAlbum</p>
-        </div>
-        <span class="album-arrow">↗</span>
-      </a>
-      <a href="https://myalbum.com/" target="_blank" rel="noopener" class="album-year-card">
-        <div class="album-year-num">2022</div>
-        <div class="album-year-info">
-          <h3>SSW 2022</h3>
-          <p>Bekijk op MyAlbum</p>
-        </div>
-        <span class="album-arrow">↗</span>
-      </a>
-      <a href="https://myalbum.com/" target="_blank" rel="noopener" class="album-year-card">
-        <div class="album-year-num">2019</div>
-        <div class="album-year-info">
-          <h3>SSW 2019</h3>
-          <p>Bekijk op MyAlbum</p>
-        </div>
-        <span class="album-arrow">↗</span>
-      </a>
+    <!-- 2025 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2025</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="https://myalbum.com/album/vfDJkKsYphGP4B/" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/FvsjhCsMa3Dg8i/" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/5emDGgzuZSTNiy/" target="_blank" rel="noopener" class="foto-day-card dag-wo">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/mwXdFDastCjQq2/" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/yDfpwPq59iVuWa/" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
     </div>
+
+    <!-- 2024 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2024</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="https://myalbum.com/album/nUsn6DFW4yw9R6/?invite=d099c620-b449-4ba9-9490-a223c4888cee" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/zmujNmcFA94YPo/?invite=b5dea951-7946-4c74-86fc-6d79e757b9d4" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/AmhHYfv5UJVHnA/?invite=3e311985-f70d-4a0c-9597-16637aa7b33a" target="_blank" rel="noopener" class="foto-day-card dag-wo">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/DPAcH9mee47mc7/?invite=48899afa-f059-4979-ac6d-b5c52ba421d5" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/vHo38n8aR3R7fT/?invite=ab0ae5e3-6539-4327-83db-af90aa1594e5" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2023</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="https://myalbum.com/album/EjLeEZjR2uHfnZ/" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/GxX9yDRbeDzuJm/" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/e3aHnkEiSTgM5q/" target="_blank" rel="noopener" class="foto-day-card dag-wo">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/6mg2jJmDQvuEPo/" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/FytPob24bs7ok6/" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2022</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="https://myalbum.com/album/ekCTgn5AnwiZt6/" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/fzkVNe9oV7kx3S/" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/VG2mH8XcTGa2rE/" target="_blank" rel="noopener" class="foto-day-card dag-wo">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/4gUTML9xpGPLh2/" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/mWfFXVpmKLELJR/" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2021 — Facebook, split ochtend/middag -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2021</h2>
+      </div>
+      <div class="foto-day-grid flex-grid">
+        <a href="https://www.facebook.com/media/set/?set=a.4776040359081621&type=3" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Maandag</span>
+            <span class="foto-day-sub">Ochtend</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.4776049912413999&type=3" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Maandag</span>
+            <span class="foto-day-sub">Middag</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.4780441541974836&type=3" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Dinsdag</span>
+            <span class="foto-day-sub">Ochtend</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.4780450285307295&type=3" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Dinsdag</span>
+            <span class="foto-day-sub">Middag</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.4785029461516044&type=3" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Donderdag</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.4788733534478970&type=3" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Vrijdag</span>
+            <span class="foto-day-sub">Ochtend</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.4788740831144907&type=3" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Vrijdag</span>
+            <span class="foto-day-sub">Middag</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2020 — Facebook, split per dag -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2020</h2>
+      </div>
+      <div class="foto-day-grid flex-grid">
+        <a href="https://www.facebook.com/media/set/?set=a.3662469163772085&type=3" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Maandag</span>
+            <span class="foto-day-sub">Deel 1</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3662478870437781&type=3" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Maandag</span>
+            <span class="foto-day-sub">Deel 2</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3668804176471917&type=3" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Dinsdag</span>
+            <span class="foto-day-sub">Deel 1</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3668812316471103&type=3" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Dinsdag</span>
+            <span class="foto-day-sub">Deel 2</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3665832463435755&type=3" target="_blank" rel="noopener" class="foto-day-card dag-cr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Colour Run</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3671698979515770&type=3" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Donderdag</span>
+            <span class="foto-day-sub">Deel 1</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3671708232848178&type=3" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Donderdag</span>
+            <span class="foto-day-sub">Deel 2</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3677277678957900&type=3" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Vrijdag</span>
+            <span class="foto-day-sub">Deel 1</span>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/media/set/?set=a.3677284908957177&type=3" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info">
+            <span class="foto-day-name">Vrijdag</span>
+            <span class="foto-day-sub">Deel 2</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2019</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="https://myalbum.com/album/PLZsF6fj2PTy" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/vsedDrvDNycB" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/fVvwbJTni3Am" target="_blank" rel="noopener" class="foto-day-card dag-wo">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/WSRGZt7eGiiM" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/JfftfkgFaVPB" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="foto-year-section reveal">
+      <div class="foto-year-header">
+        <h2 class="foto-year-title">2018</h2>
+      </div>
+      <div class="foto-day-grid">
+        <a href="https://myalbum.com/album/t1Z77nY75HdL" target="_blank" rel="noopener" class="foto-day-card dag-ma">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Maandag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/GNQt3v4MkbqP" target="_blank" rel="noopener" class="foto-day-card dag-di">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Dinsdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/3q8ShqZ5W53n" target="_blank" rel="noopener" class="foto-day-card dag-wo">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Woensdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/jYpnTbret3yr" target="_blank" rel="noopener" class="foto-day-card dag-do">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Donderdag</span></div>
+        </a>
+        <a href="https://myalbum.com/album/VPuW9HFXvfNi" target="_blank" rel="noopener" class="foto-day-card dag-vr">
+          <div class="foto-day-overlay"></div>
+          <div class="foto-day-arrow">↗</div>
+          <div class="foto-day-info"><span class="foto-day-name">Vrijdag</span></div>
+        </a>
+      </div>
+    </div>
+
   </section>
 </main>
 
@@ -200,7 +601,7 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>info@summersportsweek.nl<br><br>Stichting Summer Sports Week<br>Turkooishof 48, 4817HD Breda</p>
+      <p>info@summersportsweek.nl<br><br>Stichting Summer Sports Week<br>Turkooishof 48, 4817HD Breda<br>KVK: 63224879</p>
     </div>
   </div>
   <div class="footer-bottom">
