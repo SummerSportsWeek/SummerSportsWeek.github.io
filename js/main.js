@@ -96,10 +96,13 @@ document.querySelectorAll('form[data-formspree]').forEach(form => {
         }
         btn.textContent = 'Verstuurd ✓';
       } else {
-        btn.textContent = 'Fout — probeer opnieuw';
+        const data = await res.json().catch(() => ({}));
+        console.error('Formspree fout', res.status, data);
+        btn.textContent = `Fout ${res.status} — probeer opnieuw`;
         btn.disabled = false;
       }
-    } catch {
+    } catch (err) {
+      console.error('Formspree netwerkfout', err);
       btn.textContent = 'Fout — probeer opnieuw';
       btn.disabled = false;
     }
