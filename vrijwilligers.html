@@ -23,7 +23,7 @@
     }
     body { background: var(--c-bg); color: var(--c-text); }
     nav { background: rgba(250,249,246,0.88); border-bottom: 1px solid var(--c-border); }
-    .nav-logo { color: var(--c-text); }
+    .nav-logo { color: var(--c-text) !important; }
     .nav-links a { color: var(--c-text2); }
     .nav-links a:hover, .nav-links a.active { color: var(--c-text); background: var(--c-bg2); }
     .nav-hamburger span { background: var(--c-text); }
@@ -41,13 +41,175 @@
     .form-input::placeholder, .form-textarea::placeholder { color: var(--c-text3); }
     .form-note { color: var(--c-text3); }
     footer { background: var(--c-bg2); border-top-color: var(--c-border); }
-    .nav-logo { color: var(--c-text) !important; }
     .footer-brand p { color: var(--c-text3); }
     .footer-col h4 { color: var(--c-text); }
     .footer-col ul li a, .footer-col p { color: var(--c-text3); }
     .footer-col ul li a:hover { color: var(--c-text); }
     .footer-bottom { border-top-color: var(--c-border2); }
     .footer-bottom p { color: var(--c-text3); }
+    .btn-secondary { background: var(--c-bg2); color: var(--c-text); border: 1px solid var(--c-border); }
+    .btn-secondary:hover { background: var(--c-bg3); }
+
+    /* ── SPLIT INTRO ── */
+    .vw-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .vw-intro-text p {
+      color: var(--c-text2);
+      line-height: 1.8;
+      font-size: 1.02rem;
+      margin-bottom: 1rem;
+    }
+
+    .vw-intro-text p:last-child { margin-bottom: 0; }
+
+    /* ── FEATURED FOTO ── */
+    .vw-featured-photo {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(155deg, #FA6B20 0%, #f5c49a 100%);
+    }
+
+    .vw-featured-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .vw-featured-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+    }
+
+    .vw-featured-photo-label {
+      position: absolute;
+      bottom: 1.1rem;
+      left: 1.25rem;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .vw-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+    }
+
+    /* ── FOTO GRID ── */
+    .vw-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .vw-photo-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .vw-photo-card.tall { aspect-ratio: 3/4; }
+
+    .vw-photo-card-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Gradient placeholders per kaart */
+    .vw-photo-card:nth-child(1) { background: linear-gradient(135deg, #FA6B20 0%, #f5a27a 100%); }
+    .vw-photo-card:nth-child(2) { background: linear-gradient(135deg, #7c3aed 0%, #c4b5fd 100%); }
+    .vw-photo-card:nth-child(3) { background: linear-gradient(135deg, #16a34a 0%, #86efac 100%); }
+    .vw-photo-card:nth-child(4) { background: linear-gradient(135deg, #2563eb 0%, #7dd3fc 100%); }
+    .vw-photo-card:nth-child(5) { background: linear-gradient(135deg, #dc2626 0%, #fca5a5 100%); }
+
+    .vw-photo-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);
+    }
+
+    .vw-photo-card-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+    }
+
+    /* ── ROLLEN ── */
+    .vw-roles {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .vw-role-card {
+      background: var(--c-bg2);
+      border: 1px solid var(--c-border2);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .vw-role-card:hover {
+      border-color: rgba(245,86,10,0.3);
+      transform: translateY(-2px);
+    }
+
+    .vw-role-icon { font-size: 1.75rem; margin-bottom: 0.65rem; }
+
+    .vw-role-card h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--c-text);
+      margin-bottom: 0.35rem;
+    }
+
+    .vw-role-card p {
+      font-size: 0.85rem;
+      color: var(--c-text3);
+      line-height: 1.55;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .vw-intro { grid-template-columns: 1fr; gap: 2rem; }
+      .vw-photo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .vw-photo-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -62,7 +224,7 @@
     <li><a href="aanmelden.html">Aanmelden</a></li>
     <li><a href="fotos.html">Foto's</a></li>
     <li><a href="videos.html">Video's</a></li>
-    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+    <li><a href="vrijwilligers.html" class="active">Vrijwilligers</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="aanmelden.html" class="nav-cta">Meld je aan →</a></li>
   </ul>
@@ -79,29 +241,81 @@
 
   <section class="section">
 
-    <!-- Intro -->
-    <div class="reveal" style="max-width:700px; margin-bottom:3rem">
-      <p style="color:var(--c-text2); line-height:1.8; font-size:1.02rem">
-        Al jarenlang werken wij samen met een enthousiast team van vrijwilligers. Veel van hen deden vroeger zelf mee als kind en zijn nu doorgegroeid tot begeleider. Zij zorgen ervoor dat kinderen een veilige, sportieve en onvergetelijke week beleven.
-      </p>
+    <!-- Intro split -->
+    <div class="vw-intro reveal">
+      <div class="vw-intro-text">
+        <p>Al jarenlang werken wij samen met een enthousiast team van vrijwilligers. Veel van hen deden vroeger zelf mee als kind en zijn nu doorgegroeid tot begeleider. Dat maakt SSW zo bijzonder: je weet als vrijwilliger precies hoe het voelt om hier kind te zijn.</p>
+        <p>Als vrijwilliger zorg je ervoor dat kinderen een veilige, sportieve en onvergetelijke week beleven. Je begeleidt ze bij sport en spel, helpt bij creatieve activiteiten en zorgt voor een goede sfeer in de groep. Tegelijkertijd leer je ook zelf enorm veel — over samenwerken, verantwoordelijkheid dragen en van jezelf.</p>
+        <p>Samen met een geweldig team maak je van Summer Sports Week ieder jaar weer de leukste week van de zomer.</p>
+      </div>
+      <div class="vw-featured-photo">
+        <img src="images/vrijwilligersgroep.jpeg" alt="Vrijwilligers SSW">
+        <div class="vw-photo-placeholder">
+        </div>
+        <div class="vw-featured-photo-overlay"></div>
+        <span class="vw-featured-photo-label">Het team van SSW</span>
+      </div>
     </div>
 
-    <!-- Wat wordt er verwacht / wat krijg je terug -->
+    <!-- Foto grid: 3 naast elkaar -->
+    <div class="vw-photo-grid reveal">
+      <div class="vw-photo-card">
+        <img class="vw-photo-card-bg" src="images/vrijwilliger1.jpeg" alt="">
+        <div class="vw-photo-card-overlay"></div>
+        <div class="vw-photo-card-placeholder"></div>
+      </div>
+      <div class="vw-photo-card">
+        <img class="vw-photo-card-bg" src="images/vrijwilliger2.jpg" alt="">
+        <div class="vw-photo-card-overlay"></div>
+        <div class="vw-photo-card-placeholder"></div>
+      </div>
+      <div class="vw-photo-card">
+        <img class="vw-photo-card-bg" src="images/vrijwilliger3.jpg" alt="">
+        <div class="vw-photo-card-overlay"></div>
+        <div class="vw-photo-card-placeholder"></div>
+      </div>
+    </div>
+
+    <!-- Rollen -->
+    <div class="reveal">
+      <p class="section-label">Jouw rol</p>
+      <h2 class="section-title">Wat doe je als vrijwilliger?</h2>
+      <p class="section-subtitle" style="margin-bottom:0">Afhankelijk van de dag en het programma kun je van alles doen. Geen dag is hetzelfde.</p>
+    </div>
+
+    <div class="vw-roles reveal" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="vw-role-card">
+        <div class="vw-role-icon">🤝</div>
+        <h3>Groepsbegeleider</h3>
+        <p>Verantwoordelijk voor een vaste groep kinderen. Jij bent hun eerste aanspreekpunt de hele week.</p>
+      </div>
+      <div class="vw-role-card">
+        <div class="vw-role-icon">🏅</div>
+        <h3>Sportbegeleiding</h3>
+        <p>Begeleid kinderen bij sportclinics, teamspelen en activiteiten. Enthousiasmeer, coach en speel mee.</p>
+      </div>
+      <div class="vw-role-card">
+        <div class="vw-role-icon">🍽️</div>
+        <h3>Maaltijden & logistiek</h3>
+        <p>Help bij het uitdelen van tussendoortjes en maaltijden. Klus je graag achter de schermen? Dit is jouw plek.</p>
+      </div>
+    </div>
+
+    <!-- Wat houdt het in -->
     <div class="reveal">
       <p class="section-label">Vrijwilliger worden</p>
       <h2 class="section-title">Wat houdt het in?</h2>
     </div>
 
-    <div class="volunteer-highlights reveal">
+    <div class="volunteer-highlights reveal" style="grid-template-columns: repeat(3, 1fr);">
       <div class="volunteer-card">
         <div class="volunteer-card-icon">⏰</div>
         <h3>Wat wordt er van je verwacht?</h3>
         <ul>
           <li>Elke dag aanwezig van ~7:30/8:00 tot ~18:00</li>
-          <li>Woensdag mag je iets langer uitslapen</li>
-          <li>Zondag 10 augustus: kennismakingsmiddag</li>
-          <li>Er voor de kinderen zijn — begeleiden, aanmoedigen, spelen</li>
-          <li>Aanwezig elke dag van de week</li>
+          <li>Woensdag mag je iets langer uitslapen 🙃</li>
+          <li>Zondag 16 augustus: kennismakingsmiddag</li>
+          <li>Er voor de kinderen zijn — begeleiden, aanmoedigen, meespelen</li>
         </ul>
       </div>
 
@@ -109,7 +323,7 @@
         <div class="volunteer-card-icon">🎁</div>
         <h3>Wat krijg je er voor terug?</h3>
         <ul>
-          <li>Een SSW begeleiders-hoodie</li>
+          <li>Een SSW begeleiders-shirt & hoodie</li>
           <li>Ontbijt, lunch en een heerlijke avondmaaltijd</li>
           <li>Een fantastisch hecht team</li>
           <li>Gezellige avonden samen</li>
@@ -122,7 +336,7 @@
         <div class="volunteer-card-icon">📋</div>
         <h3>Wat stuur je in?</h3>
         <ul>
-          <li>Een stukje over jezelf: woonplaats, sport, motivatie</li>
+          <li>Een stukje over jezelf: woonplaats, sport, familie, en uiteraard je motivatie</li>
           <li>Een leuke foto van jezelf</li>
           <li>Naam + telefoonnummer van je ouder(s)</li>
           <li>Vóór 30 mei 2026 insturen</li>
@@ -135,74 +349,73 @@
       border: 1px solid rgba(245,86,10,0.2);
       border-radius: var(--radius);
       padding: 1.1rem 1.4rem;
-      max-width: 620px;
-      margin: 2rem 0;
+      margin: 2rem 0 4rem;
       font-size:0.9rem;
       color: var(--c-text2);
     ">
-      ℹ️ Na je aanmelding nemen we contact met je op. In juni hoor je of je mee kunt helpen. Aanmelden betekent niet automatisch dat je al bent ingedeeld.
+      ℹ️ <!-- Na je aanmelding nemen we contact met je op. In juni hoor je of je mee kunt helpen. Aanmelden betekent niet automatisch dat je al bent ingedeeld.--> Het is niet meer mogelijk om je aan te melden als vrijwilliger.
     </div>
 
-    <!-- FORM -->
-    <div class="reveal" style="margin-top:3rem">
+    <!-- Aanmeldformulier -->
+    <div class="reveal">
       <p class="section-label">Aanmelden</p>
       <h2 class="section-title" style="margin-bottom:1.5rem">Meld je aan als vrijwilliger</h2>
 
       <!--
         🔧 Vervang de action-URL door jouw echte Formspree endpoint:
-        https://formspree.io/f/JOUW_FORM_ID
+        https://formspree.io/f/mrevrjll
       -->
       <form
         class="form-card"
-        data-formspree="https://formspree.io/f/JOUW_FORM_ID"
-        action="https://formspree.io/f/JOUW_FORM_ID"
+        data-formspree="https://formspree.io/f/mrevrjll"
+        action="https://formspree.io/f/mrevrjll"
         method="POST"
         enctype="multipart/form-data"
       >
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="naam">Naam <span class="required">*</span></label>
-            <input class="form-input" type="text" id="naam" name="naam" placeholder="Je volledige naam" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">E-mailadres <span class="required">*</span></label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="jouw@email.nl" required />
-          </div>
-        </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="naam">Naam <span class="required">*</span></label>
+                <input class="form-input" type="text" id="naam" name="naam" placeholder="Je volledige naam" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">E-mailadres <span class="required">*</span></label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="jouw@email.nl" required />
+              </div>
+            </div>
 
-        <div class="form-group">
-          <label class="form-label" for="telefoon">Telefoonnummer <span class="required">*</span></label>
-          <input class="form-input" type="tel" id="telefoon" name="telefoon" placeholder="06 – – – – – – – –" required />
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="telefoon">Telefoonnummer <span class="required">*</span></label>
+              <input class="form-input" type="tel" id="telefoon" name="telefoon" placeholder="06 – – – – – – – –" required />
+            </div>
 
-        <div class="form-group">
-          <label class="form-label" for="bericht">Vertel iets over jezelf <span class="required">*</span></label>
-          <textarea class="form-textarea" id="bericht" name="bericht" placeholder="Vertel waar je woont, welke sport je doet en waarom je vrijwilliger wil worden bij SSW…" style="min-height:160px" required></textarea>
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="bericht">Vertel iets over jezelf <span class="required">*</span></label>
+              <textarea class="form-textarea" id="bericht" name="bericht" placeholder="Vertel waar je woont, welke sport je doet en waarom je vrijwilliger wil worden bij SSW…" style="min-height:160px" required></textarea>
+            </div>
 
-        <div class="form-group">
-          <label class="form-label" for="foto">Foto van jezelf</label>
-          <input class="form-input" type="file" id="foto" name="foto" accept="image/*" style="padding:0.6rem 1rem; cursor:pointer" />
-          <p class="form-note">JPG, PNG of WEBP — max. 5 MB</p>
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="foto">Foto van jezelf</label>
+              <input class="form-input" type="file" id="foto" name="foto" accept="image/*" style="padding:0.6rem 1rem; cursor:pointer" />
+              <p class="form-note">JPG, PNG of WEBP — max. 5 MB</p>
+            </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="ouder-naam">Naam ouder(s) <span class="required">*</span></label>
-            <input class="form-input" type="text" id="ouder-naam" name="ouder_naam" placeholder="Naam van ouder(s)" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="ouder-telefoon">Telefoon ouder(s) <span class="required">*</span></label>
-            <input class="form-input" type="tel" id="ouder-telefoon" name="ouder_telefoon" placeholder="06 – – – – – – – –" required />
-          </div>
-        </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="ouder-naam">Naam ouder(s) <span class="required">*</span></label>
+                <input class="form-input" type="text" id="ouder-naam" name="ouder_naam" placeholder="Naam van ouder(s)" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ouder-telefoon">Telefoon ouder(s) <span class="required">*</span></label>
+                <input class="form-input" type="tel" id="ouder-telefoon" name="ouder_telefoon" placeholder="06 – – – – – – – –" required />
+              </div>
+            </div>
 
-        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem">
-          Aanmelding versturen →
-        </button>
-      </form>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:0.5rem">
+              Aanmelding versturen →
+            </button>
+          </form>
 
-      <div class="form-success" style="max-width:620px">
+      <div class="form-success">
         ✅ Bedankt voor je aanmelding! We nemen in juni contact met je op.
       </div>
     </div>
@@ -229,7 +442,7 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>info@summersportsweek.nl<br><br>Stichting Summer Sports Week<br>Turkooishof 48, 4817HD Breda</p>
+      <p>info@summersportsweek.nl<br><br>Stichting Summer Sports Week<br>Turkooishof 48, 4817HD Breda<br>KVK: 63224879</p>
     </div>
   </div>
   <div class="footer-bottom">

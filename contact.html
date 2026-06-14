@@ -62,7 +62,7 @@
     <li><a href="fotos.html">Foto's</a></li>
     <li><a href="videos.html">Video's</a></li>
     <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
     <li><a href="aanmelden.html" class="nav-cta">Meld je aan →</a></li>
   </ul>
 </nav>
@@ -77,10 +77,11 @@
   </div>
 
   <section class="section">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:3rem; align-items:start">
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:3rem; align-items:stretch">
 
       <!-- Form -->
-      <div class="reveal">
+      <div class="reveal" style="display:flex; flex-direction:column">
         <p class="section-label">Stuur een bericht</p>
         <h2 class="section-title" style="font-size:1.6rem; margin-bottom:1.5rem">Contactformulier</h2>
 
@@ -90,8 +91,9 @@
         -->
         <form
           class="form-card"
-          data-formspree="https://formspree.io/f/JOUW_FORM_ID_CONTACT"
-          action="https://formspree.io/f/JOUW_FORM_ID_CONTACT"
+          style="flex:1"
+          data-formspree="https://formspree.io/f/mvzndlqa"
+          action="https://formspree.io/f/mvzndlqa"
           method="POST"
         >
           <div class="form-group">
@@ -125,7 +127,7 @@
       </div>
 
       <!-- Contact info -->
-      <div class="reveal" style="display:flex; flex-direction:column; gap:1.5rem; padding-top:0.5rem">
+      <div class="reveal" style="display:flex; flex-direction:column; gap:1.5rem">
         <div>
           <p class="section-label" style="margin-bottom:0.5rem">Direct contact</p>
           <h2 class="section-title" style="font-size:1.6rem; margin-bottom:1.25rem">Gegevens</h2>
@@ -178,6 +180,19 @@
         }
       }
     </style>
+
+    <!-- Over SSW -->
+    <div class="reveal" style="margin-top:4rem">
+      <p class="section-label">Over ons</p>
+      <h2 class="section-title" style="font-size:clamp(1.4rem,3vw,2rem); margin-bottom:1rem">Wat is Summer Sports Week?</h2>
+      <p style="color:var(--c-text2); line-height:1.8; max-width:720px; margin-bottom:0.85rem">
+        Summer Sports Week is in 2016 gestart als een kleinschalige sportweek voor kinderen uit de gemeente Drimmelen. Wat begon als een bescheiden initiatief is inmiddels uitgegroeid tot hét sportevenement van de zomer — vijf dagen vol sport, spel, nieuwe vriendschappen en onvergetelijke herinneringen.
+      </p>
+      <p style="color:var(--c-text2); line-height:1.8; max-width:720px">
+        SSW wordt georganiseerd door een enthousiast team van jonge mensen: <strong style="color:var(--c-text)">Cas, Hidde, Jeroen, Jovano, Lianne, Suus en Bram</strong> — ondersteund door Stichting Summer Sports Week en een groot team van vrijwilligers. Samen zorgen zij er ieder jaar voor dat kinderen de leukste week van hun zomer beleven.
+      </p>
+    </div>
+
   </section>
 </main>
 
