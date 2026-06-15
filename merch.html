@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merch | Summer Sports Week 2026</title>
+  <meta name="description" content="Officiële SSW merchandise: bucket hat, jubileumhoodie en sportbroek. Bestel mee tijdens het aanmelden voor Summer Sports Week 2026." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .merch-card {
+      background: var(--c-bg);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .merch-card:hover {
+      border-color: rgba(245,86,10,0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .merch-card-visual {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .merch-card-visual img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .merch-card:hover .merch-card-visual img {
+      transform: scale(1.04);
+    }
+
+    .merch-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .merch-price-tag {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(245,86,10,0.1);
+      color: var(--c-orange);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+
+    .merch-card-body h2 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--c-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .merch-card-body p {
+      font-size: 0.93rem;
+      color: var(--c-text2);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .merch-cta-banner {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+      margin-top: 3rem;
+      text-align: center;
+      background: var(--c-dark);
+    }
+
+    .merch-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(245,86,10,0.22) 0%, transparent 70%);
+    }
+
+    .merch-cta-banner > * { position: relative; z-index: 1; }
+
+    .merch-cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .merch-cta-banner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.97rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+
+    .merch-price-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .merch-price-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logos/SSW_ICON.png" alt="" style="height:28px; width:auto;">Summer <span>Sports</span> Week</a>
+  <button class="nav-hamburger" aria-label="Menu openen">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aanmelden.html">Aanmelden</a></li>
+    <li><a href="merch.html" class="active">Merch</a></li>
+    <li><a href="fotos.html">Foto's</a></li>
+    <li><a href="videos.html">Video's</a></li>
+    <li><a href="vrijwilligers.html">Vrijwilligers</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="aanmelden.html" class="nav-cta">Meld je aan →</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-header-inner">
+      <p class="section-label">Officiële SSW Merchandise</p>
+      <h1 class="section-title animate-up">Draag de zomer<br>met je mee</h1>
+      <p class="section-subtitle animate-up delay-1">Bestel onze officiële SSW merch!</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="reveal">
+      <p class="section-label">De collectie</p>
+      <h2 class="section-title">Wat er te bestellen is</h2>
+      <p class="section-subtitle">Drie items, elk 100% SSW. Bestel ze los via de link hieronder.</p>
+    </div>
+
+    <div class="merch-grid reveal">
+
+      <div class="merch-card">
+        <div class="merch-card-visual">
+          <img src="images/items/bucket hat.png" alt="SSW Bucket Hat">
+        </div>
+        <div class="merch-card-body">
+          <span class="merch-price-tag">€ 10,–</span>
+          <h2>SSW Bucket Hat</h2>
+          <p>De zomer is van jou! Deze SSW bucket hat houdt de zon tegen terwijl jij alles geeft op het veld. Draag hem scheef, draag hem recht &mdash; als je hem op hebt, weet iedereen dat jij bij de Summer Sports Week hoort!</p>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-card-visual">
+          <img src="images/items/hoodie.png" alt="10 jaar SSW Jubileumhoodie">
+        </div>
+        <div class="merch-card-body">
+          <span class="merch-price-tag">€ 27,50</span>
+          <h2>10 jaar SSW Jubileumhoodie</h2>
+          <p>Dit is meer dan een hoodie, dit is het bewijs dat jij erbij was! Warm, comfy en gemaakt om in te chillen na een dag vol actie. Trek hem aan en neem de zomer mee naar huis!</p>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-card-visual">
+          <img src="images/items/broekje.jpeg" alt="SSW Sportbroek">
+        </div>
+        <div class="merch-card-body">
+          <span class="merch-price-tag">€ 15,–</span>
+          <h2>SSW Sportbroek</h2>
+          <p>Rennen, springen, scoren &mdash; en er nog goed uitzien ook! De SSW sportbroek gaat met je mee wat je ook doet. Licht, lekker en 100% klaar voor de strijd.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="merch-cta-banner reveal">
+      <h2>Bestel jouw SSW merch!</h2>
+      <p>Nabestelling van officiële SSW merch? Dat kan! Klik op de knop hieronder en bestel rechtstreeks via ons bestelplatform.</p>
+      <div class="merch-price-list">
+        <span class="merch-price-pill">🧢 Bucket hat &mdash; €10</span>
+        <span class="merch-price-pill">🧥 10 jaar SSW Jubileumhoodie &mdash; €27,50</span>
+        <span class="merch-price-pill">🩳 Sportbroek &mdash; €15</span>
+      </div>
+      <a href="https://tickets.summersportsweek.nl/SSW2026/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1rem; padding:1rem 2.25rem">
+        Merch bestellen →
+      </a>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:0.6rem; display:block">Summer <span>Sports</span> Week</a>
+      <p>Sport, plezier en nieuwe ontmoetingen voor kinderen in groep 5 t/m 8.</p>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/summersportsweek/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://nl-nl.facebook.com/pages/category/Sports-Event/Summer-Sports-Week-331036767025035/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UCxpCio21OCXg7ZdBOnwWqRw" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Stichting Summer Sports Week</p>
+    <p>KVK 63224879 · SBI-code 88992</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
