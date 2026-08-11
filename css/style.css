@@ -379,6 +379,81 @@ main { padding-top: 68px; }
   color: var(--c-text);
 }
 
+/* ── DOCUMENT BANNERS ── */
+.doc-banners-heading {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--c-border2);
+}
+
+.subsection-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
+}
+
+.doc-banners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.doc-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  background: var(--c-bg2);
+  border: 1px solid var(--c-border2);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  text-decoration: none;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.doc-banner:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245,86,10,0.3);
+}
+
+.doc-banner-icon {
+  font-size: 1.9rem;
+  flex-shrink: 0;
+}
+
+.doc-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.doc-banner-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--c-text);
+}
+
+.doc-banner-desc {
+  font-size: 0.88rem;
+  color: var(--c-text2);
+}
+
+.doc-banner-arrow {
+  font-size: 1.3rem;
+  color: var(--c-orange);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.doc-banner:hover .doc-banner-arrow {
+  transform: translate(3px, -3px);
+}
+
 /* ── GOAL LIST ── */
 .goal-list {
   display: grid;
