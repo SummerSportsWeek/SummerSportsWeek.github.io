@@ -1,65 +1,44 @@
-# Summer Sports Week — Statische website
+# Summer Sports Week
 
-Volledige statische website klaar voor GitHub Pages.
+Website van **Summer Sports Week**, een jaarlijkse sportweek voor kinderen in groep 5 t/m 8 bij The Outdoor PACT in Made.
 
-## Bestandsstructuur
+Live op [summersportsweek.nl](https://summersportsweek.nl).
+
+## Pagina's
+
+| Pagina | Route | Inhoud |
+|---|---|---|
+| Home | `/` | Introductie, countdown, programma-overzicht |
+| Aanmelden | `/aanmelden/` | Aanmelden voor de sportweek (via Pretix) |
+| Foto's | `/fotos/` | Fotoarchief per editie (via MyAlbum) |
+| Video's | `/videos/` | Aftermovies en highlights (YouTube) |
+| Vrijwilligers | `/vrijwilligers/` | Informatie en aanmeldformulier voor vrijwilligers |
+| Merch | `/merch/` | Officiële SSW-merchandise |
+| Contact | `/contact/` | Contactformulier |
+
+## Tech stack
+
+Statische HTML, CSS en vanilla JavaScript — geen build-stap, geen frameworks. Fonts via Google Fonts (Bricolage Grotesque, DM Sans).
+
+## Structuur
 
 ```
-/
-├── index.html          # Homepage
-├── aanmelden.html      # Aanmelden (doorlink naar Pretix)
-├── fotos.html          # Foto's (doorlinks naar MyAlbum)
-├── videos.html         # Video's (YouTube embeds)
-├── vrijwilligers.html  # Vrijwilligers + aanmeldformulier
-├── contact.html        # Contactformulier
-├── css/
-│   └── style.css
-└── js/
-    └── main.js
+index.html              Homepage
+aanmelden/index.html    Aanmeldpagina
+fotos/index.html        Fotoarchief
+videos/index.html       Video's
+vrijwilligers/index.html  Vrijwilligers
+merch/index.html        Merchandise
+contact/index.html      Contact
+404.html                Foutpagina
+
+css/style.css           Styling
+js/main.js              Interactiviteit
+logos/                  Logo's en favicon
+images/                 Foto's per pagina
+bestanden/               Downloads (programmaboekje, protocollen)
 ```
 
----
+## Deployment
 
-## 🔧 Wat je nog moet invullen
-
-### 1. Formspree (formulieren)
-Maak een gratis account op [formspree.io](https://formspree.io).
-Maak twee formulieren aan en vervang de placeholders:
-
-- **vrijwilligers.html** → zoek naar `JOUW_FORM_ID` → vervang door jouw Formspree-ID
-- **contact.html** → zoek naar `JOUW_FORM_ID_CONTACT` → vervang door jouw tweede Formspree-ID
-
-### 2. Pretix-link (aanmelden)
-In `aanmelden.html`, zoek naar:
-```html
-<a href="https://pretix.eu/" ...>
-```
-Vervang `https://pretix.eu/` door de echte link naar jullie Pretix-evenement.
-
-### 3. YouTube video-ID's (videos.html)
-Zoek naar `VIDEO_ID_2024`, `VIDEO_ID_2023`, etc.
-Vervang elk met het echte YouTube video-ID (het deel na `watch?v=` in de URL).
-
-### 4. MyAlbum-links (fotos.html)
-Zoek naar `href="https://myalbum.com/"` en vervang elk door de echte albumlink per jaar.
-
----
-
-## 🚀 Publiceren op GitHub Pages
-
-1. Maak een nieuwe GitHub-repository aan (bijv. `summersportsweek`)
-2. Push alle bestanden naar de `main`-branch
-3. Ga naar **Settings → Pages → Source: Deploy from branch → main / root**
-4. Je site is live op `https://jouwgebruikersnaam.github.io/summersportsweek/`
-
-### Eigen domein koppelen (summersportsweek.nl)
-1. Maak een bestand `CNAME` aan in de root met als inhoud: `summersportsweek.nl`
-2. Stel bij je DNS-provider de volgende records in:
-   ```
-   A     @    185.199.108.153
-   A     @    185.199.109.153
-   A     @    185.199.110.153
-   A     @    185.199.111.153
-   CNAME www  jouwgebruikersnaam.github.io
-   ```
-3. Vink in GitHub Pages "Enforce HTTPS" aan (duurt max. 24u)
+Gehost via GitHub Pages met een eigen domein (zie `CNAME`). Pushen naar `main` publiceert direct — geen build-proces nodig.
