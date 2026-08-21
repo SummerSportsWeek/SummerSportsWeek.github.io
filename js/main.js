@@ -24,7 +24,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 
 // ── COUNTDOWN ──
 function updateCountdown() {
-  const target = new Date('2026-08-17T08:30:00');
+  const target = new Date('2027-08-30T08:30:00');
   const now    = new Date();
   const diff   = target - now;
 
