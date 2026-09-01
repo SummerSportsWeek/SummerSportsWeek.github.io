@@ -1153,6 +1153,15 @@ footer {
   line-height: 1;
 }
 
+.foto-year-credit {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--c-orange);
+  text-decoration: none;
+}
+.foto-year-credit:hover { text-decoration: underline; }
+
 .dag-placeholder {
   background: linear-gradient(155deg, #9ca3af 0%, #d1d5db 100%);
   opacity: 0.6;
